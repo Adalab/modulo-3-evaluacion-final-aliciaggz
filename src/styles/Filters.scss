@@ -1,0 +1,29 @@
+.page__form {
+  display: flex;
+  flex-direction: column;
+
+  height: 20vh;
+  .page__div {
+    display: flex;
+    justify-content: center;
+    &--label {
+      color: white;
+      font-size: 40px;
+      margin-right: 40px;
+    }
+    &--input {
+      width: 270px;
+      border-radius: 1em;
+      border: none;
+      color: brown;
+    }
+  }
+}
+
+.page__select {
+  font-size: 30px;
+  justify-content: center;
+  width: 240px;
+  border-radius: 1em;
+  margin: 20px;
+}
