@@ -35,6 +35,14 @@ function Filters(props) {
           <option value="ravenclaw">Ravenclaw</option>
         </select>
       </div>
+
+      <div className="page__div">
+        <select name="" id="">
+          <option value="">Todos</option>
+          <option value="">Mujer</option>
+          <option value="">Hombre</option>
+        </select>
+      </div>
     </form>
   );
 }

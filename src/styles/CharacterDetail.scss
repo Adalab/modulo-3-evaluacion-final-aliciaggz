@@ -1,0 +1,21 @@
+.page__div {
+  display: flex;
+  justify-content: center;
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(48, 47, 90, 0.753);
+  width: 400px;
+  margin: 30px;
+
+  &__aside {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    &--imgHeart {
+      width: 30px;
+    }
+  }
+}

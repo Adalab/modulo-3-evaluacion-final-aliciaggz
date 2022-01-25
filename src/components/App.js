@@ -7,6 +7,7 @@ import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import Error from './Error';
 import logo from '../images/logo.png';
+import ButtonReset from './ButtonReset';
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [searchName, setSearchName] = useState('');
@@ -60,6 +61,7 @@ const App = () => {
             handleSearchName={handleSearchName}
             handleFilter={handleFilter}
           />
+          <ButtonReset />
           <CharacterList
             characters={filterCharacters}
             searchName={searchName}
