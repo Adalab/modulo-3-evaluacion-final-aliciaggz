@@ -19,7 +19,7 @@ function CharacterCard(props) {
           className="card__img"
           src={
             props.eachCharacter.image === ''
-              ? 'https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter'
+              ? 'https://ae01.alicdn.com/kf/HTB1KqKqNFXXXXcwaXXXq6xXFXXXe/17-7-11-4CM-Stylish-Harry-Potter-Glasses-For-Car-Stickers-Interesting-Motorcycle-Vinyl-Decals-Black.jpg'
               : `${props.eachCharacter.image}`
           }
           alt={`Foto de ${props.eachCharacter.name}`}

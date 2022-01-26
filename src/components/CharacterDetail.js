@@ -38,9 +38,22 @@ function CharacterDetail(props) {
 
   return (
     <div className="page__div2">
+      <Link className="article__a" to="/">
+        Volver
+      </Link>
       <article className="article">
         <div className="article__div">
-          <Link to="/">Volver</Link>
+          <div className="article__container">
+            <p className="article__container--name">
+              {props.eachCharacter.name}
+            </p>
+            <img
+              className="article__container--imgHouse"
+              src={getHouse()}
+              alt=""
+            />
+          </div>
+
           <img
             className="article__img"
             src={
@@ -52,22 +65,22 @@ function CharacterDetail(props) {
           />
         </div>
         <div className="article__aside">
-          <p>{props.eachCharacter.name}</p>
-          <p>
-            Estatus:
-            <img
-              className="article__aside--imgHeart"
-              src={
-                props.eachCharacter.status === true
-                  ? `${heartBeat}`
-                  : `${heartDead}`
-              }
-              alt=""
-            />
-          </p>
-          <p>Especie: {getSpecie()}</p>
-          <p>Genero: {getGender()}</p>
-          <img className="article__aside--imgHouse" src={getHouse()} alt="" />
+          <div className="article__text">
+            <p className="article__text--status">
+              Estatus:
+              <img
+                className="article__aside--imgHeart"
+                src={
+                  props.eachCharacter.status === true
+                    ? `${heartBeat}`
+                    : `${heartDead}`
+                }
+                alt=""
+              />
+            </p>
+            <p className="article__text--specie">Especie: {getSpecie()}</p>
+            <p className="article__text--gender">Género: {getGender()}</p>
+          </div>
         </div>
       </article>
     </div>

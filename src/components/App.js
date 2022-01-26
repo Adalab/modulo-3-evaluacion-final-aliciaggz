@@ -8,7 +8,7 @@ import CharacterDetail from './CharacterDetail';
 import Error from './Error';
 import Header from './Header';
 import ButtonReset from './ButtonReset';
-import FilterGender from './FilterGender';
+
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [searchName, setSearchName] = useState('');

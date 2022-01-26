@@ -1,33 +1,129 @@
 .page__div2 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
 }
 
 .article {
-  display: flex;
-  background-color: rgba(9, 9, 12, 0.753);
-  width: 100%;
+  border: 10px rgba(206, 206, 206, 0.795) solid;
+  background-image: url('../images/texture.jpeg');
+  border-radius: 0.7em;
+  width: 65%;
+  height: 440px;
   margin: 30px;
+  overflow-x: visible;
+  font-family: 'Harry Potter', sans-serif;
+
+  &__a {
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+  }
 
   &__div {
+    height: 70%;
+    background-image: url('../images/backcard.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
   }
 
   &__img {
-    width: 200px;
+    margin-top: 17px;
+    width: 120px;
+    border-radius: 5em;
   }
 
   &__aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 20px;
-    color: white;
+    color: rgb(100, 100, 100);
 
     &--imgHeart {
-      width: 30px;
+      width: 20px;
     }
+  }
+
+  &__text {
+    margin-top: 5px;
+
+    &--status {
+      margin: 5px;
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+      border-radius: 0.2em;
+      background: rgba(237, 237, 237, 0.212);
+      background: radial-gradient(
+        circle,
+        rgba(237, 237, 237, 0.349) 0%,
+        rgba(235, 221, 197, 0.486) 51%,
+        rgba(205, 185, 147, 0.644) 100%
+      );
+      box-shadow: rgba(107, 103, 103, 0.568) 2px 2px 4px;
+    }
+    &--specie {
+      margin: 5px;
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+      border-radius: 0.2em;
+      background: rgba(237, 237, 237, 0.212);
+      background: radial-gradient(
+        circle,
+        rgba(237, 237, 237, 0.349) 0%,
+        rgba(235, 221, 197, 0.486) 51%,
+        rgba(205, 185, 147, 0.644) 100%
+      );
+      box-shadow: #6b67679a 2px 2px 4px;
+    }
+    &--gender {
+      margin: 5px;
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+      border-radius: 0.2em;
+      background: rgba(237, 237, 237, 0.212);
+      background: radial-gradient(
+        circle,
+        rgba(237, 237, 237, 0.349) 0%,
+        rgba(235, 221, 197, 0.486) 51%,
+        rgba(205, 185, 147, 0.644) 100%
+      );
+      box-shadow: #6b67679a 2px 2px 4px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: visible;
+
+    padding-top: 20px;
+
     &--imgHouse {
-      width: 50px;
+      margin-bottom: 10px;
+
+      width: 70px;
+    }
+    &--name {
+      width: 80px;
+      font-size: 22px;
+      margin-left: 20px;
+      color: white;
     }
   }
 }
