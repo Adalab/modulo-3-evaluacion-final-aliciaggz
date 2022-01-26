@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from '../images/logo.png';
 function Error(props) {
   return (
     <div>

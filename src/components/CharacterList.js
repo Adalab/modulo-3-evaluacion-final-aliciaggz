@@ -1,16 +1,17 @@
 import CharacterCard from './CharacterCard';
+import '../styles/CharacterList.scss';
 
 function CharacterList(props) {
   const charactersInfo = props.characters.map((eachCharacter, index) => {
     return (
-      <li key={index}>
+      <li className="section__list--li" key={index}>
         <CharacterCard eachCharacter={eachCharacter} />
       </li>
     );
   });
   return (
-    <section>
-      <ul>{charactersInfo}</ul>
+    <section className="section__list">
+      <ul className="section__list--ul">{charactersInfo}</ul>
     </section>
   );
 }

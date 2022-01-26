@@ -14,6 +14,7 @@ const callToApi = (changeHouse) => {
           image: character.image,
           gender: character.gender,
           house: character.house,
+          id: `${character.name} ${character.actor} `,
         };
       });
       return cleanData;

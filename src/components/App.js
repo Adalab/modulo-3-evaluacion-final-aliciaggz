@@ -6,12 +6,14 @@ import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import Error from './Error';
-import logo from '../images/logo.png';
+import Header from './Header';
 import ButtonReset from './ButtonReset';
+import FilterGender from './FilterGender';
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [searchName, setSearchName] = useState('');
   const [searchHouse, setSearchHouse] = useState('gryffindor');
+  const [filterGender, setFilterGender] = useState('all');
 
   useEffect(() => {
     callToApi(searchHouse).then((data) => {
@@ -22,27 +24,60 @@ const App = () => {
   const handleSearchName = (ev) => {
     setSearchHouse(ev.currentTarget.value);
   };
+
+  //handler
+
+  const handleButtonReset = () => {
+    setSearchName('');
+    setSearchHouse('gryffindor');
+  };
+
   const handleFilter = (data) => {
-    setSearchName(data.value);
+    if (data.key === 'name') {
+      setSearchName(data.value);
+    } else if (data.key === 'gender') {
+      setFilterGender(data.value);
+    }
   };
 
   //the filters
 
-  const filterCharacters = characters.filter((eachCharacter) => {
-    return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase());
-  });
+  const filterCharacters = characters
+    .filter((eachCharacter) => {
+      return eachCharacter.name
+        .toLowerCase()
+        .includes(searchName.toLowerCase());
+    })
+    .filter((eachCharacter) =>
+      filterGender === 'all' ? true : eachCharacter.gender === filterGender
+    )
+    .sort((a, b) => {
+      if (a.name < b.name) return -1;
+      else if (a.name > b.name) return 1;
+      return 0;
+    });
 
+  if (filterCharacters.length === 0) {
+    return (
+      //PREGUNTAS MAÑANA
+      <Switch>
+        <Route path="/error">
+          <Error />;
+        </Route>
+      </Switch>
+    );
+  }
   //render
 
   const renderCharacterDetail = (props) => {
-    const routeName = props.match.params.name;
-    console.log(routeName);
+    const routeName = props.match.params.id;
+
     const foundCharacter = characters.find((eachCharacter) => {
-      return eachCharacter.name === routeName;
+      return eachCharacter.id === routeName;
     });
-    console.log(foundCharacter);
+
     return foundCharacter === undefined ? (
-      <Error />
+      <p>No encontrado</p>
     ) : (
       <CharacterDetail eachCharacter={foundCharacter} />
     );
@@ -50,24 +85,22 @@ const App = () => {
 
   return (
     <>
-      <div className="page__div">
-        <header className="page__header">
-          <img className="page__header--img" src={logo} alt="" />
-        </header>
-      </div>
+      <Header />
       <Switch>
         <Route exact path="/">
           <Filters
             handleSearchName={handleSearchName}
             handleFilter={handleFilter}
+            searchName={searchName}
+            filterGender={filterGender}
           />
-          <ButtonReset />
+          <ButtonReset handleButtonReset={handleButtonReset} />
           <CharacterList
             characters={filterCharacters}
             searchName={searchName}
           />
         </Route>
-        <Route path="/character/:name" render={renderCharacterDetail} />
+        <Route path="/character/:id" render={renderCharacterDetail} />
       </Switch>
     </>
   );

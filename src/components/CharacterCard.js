@@ -1,10 +1,22 @@
 import { Link } from 'react-router-dom';
-
+import '../styles/CharacterCard.scss';
 function CharacterCard(props) {
+  const getSpecie = () => {
+    if (props.eachCharacter.specie === 'human') {
+      return 'Humano';
+    } else if (props.eachCharacter.specie === 'werewolf') {
+      return 'Hombre Lobo';
+    } else if (props.eachCharacter.specie === 'ghost') {
+      return 'Fantasma';
+    } else if (props.eachCharacter.specie === 'half-giant') {
+      return 'Medio Gigante';
+    }
+  };
   return (
     <>
-      <Link to={`/character/${props.eachCharacter.name}`}>
+      <Link to={`/character/${props.eachCharacter.id}`}>
         <img
+          className="card__img"
           src={
             props.eachCharacter.image === ''
               ? 'https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter'
@@ -12,8 +24,10 @@ function CharacterCard(props) {
           }
           alt={`Foto de ${props.eachCharacter.name}`}
         />
-        <p>{props.eachCharacter.name}</p>
-        <p>{props.eachCharacter.specie}</p>
+        <div className="card__text">
+          <p className="card__text--name">{props.eachCharacter.name}</p>
+          <p className="card__text--specie">{getSpecie()}</p>
+        </div>
       </Link>
     </>
   );

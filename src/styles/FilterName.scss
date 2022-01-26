@@ -1,0 +1,18 @@
+.page__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--label {
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  &--input {
+    height: 23px;
+    width: 120px;
+    border-radius: 1em;
+    border: none;
+    color: rgb(71, 68, 68);
+    padding-left: 8px;
+  }
+}
