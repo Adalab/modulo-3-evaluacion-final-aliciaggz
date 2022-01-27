@@ -1,17 +1,92 @@
+$col-primary: rgba(211, 235, 78, 0.658);
+$corner-radius: 5px;
 .page__container {
   display: flex;
   justify-content: center;
   margin: 20px;
   &--button {
-    width: 60px;
-    height: 24px;
+    width: 70px;
+    height: 30px;
     border-radius: 1em;
-    border: none;
-    background-color: rgb(177, 71, 0);
-    color: white;
+    border: 1.5px solid rgb(253, 255, 106);
+    background-color: rgba(174, 231, 99, 0.541);
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'AvaraBold';
+
+    border-radius: 1em;
+
+    transition: all 0.2s ease-in;
+
     &:hover {
-      cursor: pointer;
-      background-color: rgb(109, 44, 0);
+      color: white;
+      box-shadow: 0 0 30px 0 transparentize($col-primary, 0.5);
+      background-color: $col-primary;
+      transition: all 0.2s ease-out;
+
+      &:before {
+        animation: shine 0.5s 0s linear;
+      }
     }
+
+    &:active {
+      box-shadow: 0 0 0 0 transparent;
+      transition: box-shadow 0.2s ease-in;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 0px;
+      height: 86%;
+      position: absolute;
+      top: 7%;
+      left: 0%;
+      opacity: 0;
+      box-shadow: 0 0 15px 3px white;
+      transform: skewX(-20deg);
+    }
+  }
+}
+
+@-webkit-keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+@-moz-keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
   }
 }

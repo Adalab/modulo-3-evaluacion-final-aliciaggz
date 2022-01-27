@@ -1,12 +1,44 @@
-.page__selectGender {
-  font-size: 15px;
-  width: 100px;
-  border-radius: 1em;
+@import 'core/mixins';
+.page__div--select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
+}
+
+.page__selectGender {
+  font-size: 12px;
+  width: 80px;
+  height: 25px;
+  border-radius: 1em;
+
   cursor: pointer;
   border: none;
+  font-family: 'AvaraBold';
+  text-align: center;
+  color: rgb(117, 117, 117);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    width: 85px;
+    height: 28px;
+    font-size: 13px;
+  }
+  @include desktop {
+    width: 90px;
+    height: 30px;
+    font-size: 14px;
+  }
 }
 
 .page__label {
+  margin-right: 20px;
   color: white;
+  @include tablet {
+    font-size: 16px;
+  }
+  @include desktop {
+    font-size: 20px;
+  }
 }

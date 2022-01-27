@@ -38,9 +38,11 @@ function CharacterDetail(props) {
 
   return (
     <div className="page__div2">
-      <Link className="article__a" to="/">
-        Volver
-      </Link>
+      <div className="article__a">
+        <Link className="article__a--link" to="/">
+          Volver
+        </Link>
+      </div>
       <article className="article">
         <div className="article__div">
           <div className="article__container">

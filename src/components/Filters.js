@@ -9,26 +9,26 @@ function Filters(props) {
     ev.preventDefault();
   };
   return (
-    <form className="page__form" onSubmit={handleSubmit}>
-      <FilterHouse
-        handleSearchName={props.handleSearchName}
-        searchHouse={props.searchHouse}
-      />
-      <FilterName
-        searchName={props.searchName}
-        handleFilter={props.handleFilter}
-      />
-
-      <FilterGender
-        handleFilter={props.handleFilter}
-        filterGender={props.filterGender}
-      />
-
-      <FilterOrder
-        handleFilter={props.handleFilter}
-        filterOrder={props.filterOrder}
-      />
-    </form>
+    <div className="page">
+      <form className="page__form" onSubmit={handleSubmit}>
+        <FilterHouse
+          handleSearchName={props.handleSearchName}
+          searchHouse={props.searchHouse}
+        />
+        <FilterName
+          searchName={props.searchName}
+          handleFilter={props.handleFilter}
+        />
+        <FilterGender
+          handleFilter={props.handleFilter}
+          filterGender={props.filterGender}
+        />
+        <FilterOrder
+          handleFilter={props.handleFilter}
+          filterOrder={props.filterOrder}
+        />
+      </form>
+    </div>
   );
 }
 

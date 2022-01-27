@@ -1,5 +1,19 @@
-.page__form {
+@import 'core/mixins';
+.page {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 300px;
+  &__form {
+    width: 60%;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'AvaraBold';
+    background-color: rgba(5, 5, 5, 0.822);
+    border-radius: 2em;
+    @include tablet {
+    }
+  }
 }

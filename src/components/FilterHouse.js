@@ -10,16 +10,16 @@ function FilterHouse(props) {
         onChange={props.handleSearchName}
         value={props.searchHouse}
       >
-        <option className="page__select--option s-c top" value="gryffindor">
+        <option className="page__select--option1 s-c top" value="gryffindor">
           Gryffindor
         </option>
-        <option className="page__select--option s-c top" value="slytherin">
+        <option className="page__select--option2 s-c top" value="slytherin">
           Slytherin
         </option>
-        <option className="page__select--option s-c top" value="hufflepuff">
+        <option className="page__select--option3 s-c top" value="hufflepuff">
           Hufflepuff
         </option>
-        <option className="page__select--option s-c top" value="ravenclaw">
+        <option className="page__select--option4 s-c top" value="ravenclaw">
           Ravenclaw
         </option>
       </select>

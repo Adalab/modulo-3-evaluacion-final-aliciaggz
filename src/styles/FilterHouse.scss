@@ -1,8 +1,22 @@
+@import 'core/mixins';
 .page__select {
   font-size: 15px;
   width: 140px;
+  height: 40px;
   border-radius: 1em;
   margin: 20px;
   cursor: pointer;
   border: none;
+  font-family: 'AvaraBold';
+  text-align: center;
+  @include tablet {
+    width: 160px;
+    height: 50px;
+    font-size: 18px;
+  }
+  @include desktop {
+    width: 200px;
+    height: 80px;
+    font-size: 24px;
+  }
 }

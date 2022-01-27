@@ -1,8 +1,15 @@
+@import 'core/mixins';
 .page__div {
   &--label {
     color: white;
     font-size: 17px;
     margin-right: 10px;
+    @include tablet {
+      font-size: 16px;
+    }
+    @include desktop {
+      font-size: 20px;
+    }
   }
   &--input {
     height: 23px;
@@ -10,6 +17,17 @@
     border-radius: 1em;
     border: none;
     color: rgb(71, 68, 68);
-    padding-left: 8px;
+    padding-left: 10px;
+    font-family: 'AvaraBold';
+    @include tablet {
+      width: 126px;
+      height: 28px;
+      font-size: 13px;
+    }
+    @include desktop {
+      width: 136px;
+      height: 28px;
+      font-size: 14px;
+    }
   }
 }

@@ -9,7 +9,7 @@ function FilterGender(props) {
     });
   };
   return (
-    <div className="page__div">
+    <div className="page__div--select">
       <label className="page__label" htmlFor="gender">
         Género
       </label>
@@ -20,9 +20,15 @@ function FilterGender(props) {
         onChange={handleInput}
         value={props.filterGender}
       >
-        <option value="all">Todos</option>
-        <option value="female">Mujer</option>
-        <option value="male">Hombre</option>
+        <option className="page__selectGender--option" value="all">
+          Todos
+        </option>
+        <option className="page__selectGender--option" value="female">
+          Mujer
+        </option>
+        <option className="page__selectGender--option" value="male">
+          Hombre
+        </option>
       </select>
     </div>
   );

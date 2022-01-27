@@ -1,3 +1,5 @@
+@import 'core/mixins';
+
 .section__list {
   display: flex;
   justify-content: center;
@@ -12,6 +14,12 @@
     flex-wrap: wrap;
     background-color: rgba(14, 12, 44, 0.397);
     border-radius: 3em;
+    @include tablet {
+      width: 80%;
+    }
+    @include desktop {
+      width: 80%;
+    }
   }
   &--li {
     display: flex;
@@ -21,5 +29,13 @@
     width: 120px;
     height: 260px;
     background-color: rgba(41, 41, 41, 0.856);
+    @include tablet {
+      width: 160px;
+      height: 260px;
+    }
+    @include desktop {
+      width: 230px;
+      height: 350px;
+    }
   }
 }

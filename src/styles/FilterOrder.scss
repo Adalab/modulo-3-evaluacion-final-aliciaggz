@@ -1,0 +1,18 @@
+@import 'core/mixins';
+.container__filter {
+  display: flex;
+  align-items: center;
+
+  &--label {
+    color: white;
+    margin-right: 10px;
+    @include tablet {
+      font-size: 16px;
+    }
+    @include desktop {
+      font-size: 20px;
+    }
+  }
+  &--input {
+  }
+}
