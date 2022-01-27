@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "./static/css/main.604be9ea.css",
+    "main.js": "./static/js/main.d94365c6.js",
+    "static/media/ravenclaw.png": "./static/media/ravenclaw.9610bcde136dbfa89da6.png",
+    "static/media/gryffindor.png": "./static/media/gryffindor.5c4db2d2fff6851a55cb.png",
+    "static/media/slitherin.png": "./static/media/slitherin.2f1ae1364423a77ea790.png",
+    "static/media/hufflepuff.png": "./static/media/hufflepuff.e943793f0979ded5216b.png",
+    "static/media/background.jpg": "./static/media/background.25c3942fa5a890b4a142.jpg",
+    "static/media/texture.jpeg": "./static/media/texture.7f74078ed3e664d027c6.jpeg",
+    "static/media/backcard.jpg": "./static/media/backcard.044b0a537b8526c87802.jpg",
+    "static/media/logo.png": "./static/media/logo.74a22dabfab5f7ea82e4.png",
+    "static/media/heart.png": "./static/media/heart.03fb8774f98c549d6dc2.png",
+    "static/media/heartdead.png": "./static/media/heartdead.b8f0fec8c60024899ab5.png",
+    "index.html": "./index.html",
+    "main.604be9ea.css.map": "./static/css/main.604be9ea.css.map",
+    "main.d94365c6.js.map": "./static/js/main.d94365c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.604be9ea.css",
+    "static/js/main.d94365c6.js"
+  ]
+}

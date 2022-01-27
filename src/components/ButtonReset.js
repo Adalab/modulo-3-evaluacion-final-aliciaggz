@@ -2,7 +2,6 @@ import '../styles/ButtonReset.scss';
 
 function ButtonReset(props) {
   const handleClick = () => {
-    console.log('entra');
     props.handleButtonReset();
   };
   return (

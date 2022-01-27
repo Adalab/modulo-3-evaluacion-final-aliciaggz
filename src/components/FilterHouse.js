@@ -8,6 +8,7 @@ function FilterHouse(props) {
         name="house"
         id="house"
         onChange={props.handleSearchName}
+        value={props.searchHouse}
       >
         <option className="page__select--option s-c top" value="gryffindor">
           Gryffindor
