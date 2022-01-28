@@ -3,6 +3,7 @@ import FilterHouse from './FilterHouse';
 import FilterName from './FilterName';
 import FilterGender from './FilterGender';
 import FilterOrder from './FilterOrder';
+import FilterStudent from './FilterStudent';
 
 function Filters(props) {
   const handleSubmit = (ev) => {
@@ -26,6 +27,11 @@ function Filters(props) {
         <FilterOrder
           handleFilter={props.handleFilter}
           filterOrder={props.filterOrder}
+        />
+
+        <FilterStudent
+          handleFilter={props.handleFilter}
+          filterStudent={props.filterStudent}
         />
       </form>
     </div>

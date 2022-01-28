@@ -15,6 +15,7 @@ const callToApi = (changeHouse) => {
           gender: character.gender,
           house: character.house,
           id: `${character.name} ${character.actor} `,
+          student: character.hogwartsStudent,
         };
       });
       return cleanData;

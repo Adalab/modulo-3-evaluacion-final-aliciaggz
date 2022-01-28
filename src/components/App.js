@@ -16,6 +16,7 @@ const App = () => {
   const [searchHouse, setSearchHouse] = useState('gryffindor');
   const [filterGender, setFilterGender] = useState('all');
   const [filterOrder, setfilterOrder] = useState(false);
+  const [filterStudent, setfilterStudent] = useState(false);
 
   useEffect(() => {
     callToApi(searchHouse).then((data) => {
@@ -42,6 +43,8 @@ const App = () => {
       setFilterGender(data.value);
     } else if (data.key === 'order') {
       setfilterOrder(data.value);
+    } else if (data.key === 'student') {
+      setfilterStudent(data.value);
     }
   };
 
@@ -55,7 +58,15 @@ const App = () => {
     })
     .filter((eachCharacter) =>
       filterGender === 'all' ? true : eachCharacter.gender === filterGender
-    );
+    )
+    .filter((eachCharacter) => {
+      if (filterStudent === true) {
+        return eachCharacter.student === true;
+      } else {
+        return true;
+      }
+    });
+
   if (filterOrder === true) {
     filterCharacters.sort((a, b) => {
       if (a.name < b.name) return -1;
@@ -63,6 +74,7 @@ const App = () => {
       return 0;
     });
   }
+
   console.log(filterOrder);
 
   //render
@@ -93,6 +105,7 @@ const App = () => {
             filterGender={filterGender}
             searchHouse={searchHouse}
             filterOrder={filterOrder}
+            filterStudent={filterStudent}
           />
           <ButtonReset handleButtonReset={handleButtonReset} />
           {filterCharacters.length === 0 ? (
