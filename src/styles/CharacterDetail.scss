@@ -11,27 +11,27 @@
   border: 10px rgba(206, 206, 206, 0.795) solid;
   background-image: url('../images/texture.jpeg');
   border-radius: 0.7em;
-  width: 65%;
-  height: 68%;
+  // width: 65%;
+  // height: 68%;
   margin: 30px;
   overflow-x: visible;
   font-family: 'Harry Potter', sans-serif;
   transition: ease 0.4s;
   margin-bottom: 100px;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(0.9);
   }
   @include tablet {
-    width: 40%;
-    height: 600px;
+    // width: 40%;
+    // height: 600px;
   }
   @include desktop {
-    width: 35%;
-    height: 740px;
+    // width: 35%;
+    // height: 740px;
   }
   @media (min-width: 1680px) {
-    width: 25%;
-    height: 680px;
+    // width: 25%;
+    // height: 680px;
   }
 
   &__a {
@@ -77,17 +77,18 @@
 
   &__img {
     margin-top: 17px;
-    width: 120px;
-    height: 150px;
-    border-radius: 5em;
+    object-fit: cover;
+    border: 2px solid gray; // width: 120px;
+    // height: 150px;
+    // border-radius: 5em;
     @include tablet {
-      width: 170px;
-      height: 220px;
+      // width: 170px;
+      // height: 220px;
     }
     @include desktop {
-      width: 220px;
-      height: 300px;
-      border-radius: 7em;
+      // width: 220px;
+      // height: 300px;
+      border-radius: 50%;
     }
   }
 
