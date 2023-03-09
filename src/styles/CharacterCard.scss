@@ -1,15 +1,18 @@
 @import 'core/mixins';
+@import 'core/variables';
 
 .card__img {
-  width: 120px;
-  height: 170px;
+  object-fit: cover;
+  width: 160px;
+  height: 200px;
+
   @include tablet {
     width: 160px;
     height: 200px;
   }
   @include desktop {
     width: 230px;
-    height: 270px;
+    height: 260px;
   }
 }
 
@@ -18,16 +21,21 @@
   flex-direction: column;
   padding-left: 10px;
   padding-right: 4px;
-  color: rgb(204, 204, 204);
-  font-family: 'AvaraBold';
+  color: $white-primary;
+  font-family: $bebas;
   @include tablet {
     font-size: 13px;
   }
   @include desktop {
-    font-size: 18px;
+    font-size: 28px;
   }
   &--name {
     margin-top: 5px;
     margin-bottom: 5px;
   }
+}
+
+.link {
+  width: 100%;
+  height: 50%;
 }

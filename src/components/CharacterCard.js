@@ -24,6 +24,7 @@ function CharacterCard(props) {
           }
           alt={`Foto de ${props.eachCharacter.name}`}
         />
+
         <div className="card__text">
           <p className="card__text--name">{props.eachCharacter.name}</p>
           <p className="card__text--specie">{getSpecie()}</p>
