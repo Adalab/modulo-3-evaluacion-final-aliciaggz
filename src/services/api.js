@@ -2,7 +2,7 @@
 const callToApi = (changeHouse) => {
   // Llamamos al API
   return fetch(
-    `https://hp-api.herokuapp.com/api/characters/house/${changeHouse}`
+    `https://hp-api.onrender.com/api/characters/house/${changeHouse}`
   )
     .then((response) => response.json())
     .then((data) => {
