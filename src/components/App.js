@@ -107,7 +107,7 @@ const App = () => {
             filterOrder={filterOrder}
             filterStudent={filterStudent}
           />
-          <ButtonReset handleButtonReset={handleButtonReset} />
+          {/* <ButtonReset handleButtonReset={handleButtonReset} /> */}
           {filterCharacters.length === 0 ? (
             <Error />
           ) : (

@@ -1,22 +1,35 @@
 @import 'core/mixins';
+@import 'core/variables';
+
+.filters__house {
+  &--label {
+    color: white;
+    font-size: 17px;
+    margin-right: 10px;
+    @include tablet {
+      font-size: 16px;
+    }
+    @include desktop {
+      font-size: 20px;
+    }
+  }
+}
+
 .page__select {
-  font-size: 15px;
-  width: 140px;
-  height: 40px;
-  border-radius: 1em;
-  margin: 20px;
+  font-size: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
   border: none;
-  font-family: 'AvaraBold';
-  text-align: center;
+  padding: 10px 10px;
+  background-color: transparent;
+  color: $white-primary;
+  font-family: $bodoni;
   @include tablet {
-    width: 160px;
-    height: 50px;
+    // width: 160px;
+    // height: 50px;
     font-size: 18px;
   }
   @include desktop {
-    width: 200px;
-    height: 80px;
     font-size: 24px;
   }
 }

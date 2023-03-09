@@ -1,19 +1,46 @@
 @import 'core/mixins';
+@import 'core/variables';
+
 .page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
+
   &__form {
-    width: 60%;
-    height: 240px;
+    padding: 22px 40px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    font-family: 'AvaraBold';
-    background-color: rgba(5, 5, 5, 0.822);
-    border-radius: 2em;
+    font-family: $bodoni;
+    background-color: rgba(45, 45, 45, 0.903);
+    &--content {
+      display: flex;
+    }
+    &--title {
+      font-size: 90px;
+      font-family: $bebas;
+      color: $white-primary;
+    }
+    &--divide {
+      margin-left: 90px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
     @include tablet {
     }
   }
+}
+.line {
+  width: 70%;
+  background-color: rgba(100, 100, 100, 0.903);
+  height: 1px;
+  margin-bottom: 40px;
+}
+
+.line-v {
+  height: 80%;
+  width: 7px;
+  background-color: $white-primary;
 }

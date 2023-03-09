@@ -1,7 +1,8 @@
 @import 'core/mixins';
+@import 'core/variables';
 .page__div {
   &--label {
-    color: white;
+    color: $white-primary;
     font-size: 17px;
     margin-right: 10px;
     @include tablet {
@@ -14,11 +15,12 @@
   &--input {
     height: 23px;
     width: 120px;
-    border-radius: 1em;
     border: none;
-    color: rgb(71, 68, 68);
+    background-color: $white-primary;
+    border: 2px solid $white-primary;
+    color: $white-primary;
     padding-left: 10px;
-    font-family: 'AvaraBold';
+    font-family: $bodoni;
     @include tablet {
       width: 126px;
       height: 28px;

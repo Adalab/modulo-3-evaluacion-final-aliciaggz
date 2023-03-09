@@ -2,7 +2,10 @@ import '../styles/FilterHouse.scss';
 
 function FilterHouse(props) {
   return (
-    <div className="page__div">
+    <div className="filters__house">
+      <label className="filters__house--label" htmlFor="house">
+        Buscar por casa
+      </label>
       <select
         className="page__select"
         name="house"

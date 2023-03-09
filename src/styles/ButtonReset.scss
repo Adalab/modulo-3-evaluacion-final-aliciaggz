@@ -1,27 +1,25 @@
-$col-primary: rgba(211, 235, 78, 0.658);
+$col-primary: rgba(103, 103, 102, 0.658);
 $corner-radius: 5px;
+@import 'core/variables';
+
 .page__container {
   display: flex;
   justify-content: center;
-  margin: 20px;
+
   &--button {
-    width: 70px;
-    height: 30px;
-    border-radius: 1em;
-    border: 1.5px solid rgb(253, 255, 106);
-    background-color: rgba(174, 231, 99, 0.541);
+    width: 100%;
+    border: 0px solid rgba(4, 4, 3, 0.66);
+    background-color: rgba(47, 47, 47, 0.96);
     display: inline-block;
     position: relative;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.5);
-    font-family: 'AvaraBold';
-
-    border-radius: 1em;
-
+    color: $white-primary;
+    font-family: $bebas;
     transition: all 0.2s ease-in;
+    padding: 12px;
+    font-size: 20px;
 
     &:hover {
-      color: white;
+      color: $white-primary;
       box-shadow: 0 0 30px 0 transparentize($col-primary, 0.5);
       background-color: $col-primary;
       transition: all 0.2s ease-out;
