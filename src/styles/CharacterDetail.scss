@@ -8,11 +8,9 @@
 }
 
 .article {
-  border: 10px rgba(206, 206, 206, 0.795) solid;
-  background-image: url('../images/texture.jpeg');
-  border-radius: 0.7em;
-  // width: 65%;
-  // height: 68%;
+  border: 3px rgba(69, 69, 69, 0.995) solid;
+  // background-image: url('../images/texture.jpeg');
+
   margin: 30px;
   overflow-x: visible;
   font-family: 'Harry Potter', sans-serif;
@@ -40,9 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30px;
-    width: 60px;
-    border-radius: 1em;
+
     background-color: rgb(131, 1, 1);
     color: rgb(255, 255, 255);
     margin-bottom: 20px;
@@ -68,6 +64,7 @@
   &__div {
     height: 70%;
     background-image: url('../images/backcard.jpg');
+    filter: grayscale(1);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -78,7 +75,7 @@
   &__img {
     margin-top: 17px;
     object-fit: cover;
-    border: 2px solid gray; // width: 120px;
+    // width: 120px;
     // height: 150px;
     // border-radius: 5em;
     @include tablet {
@@ -86,8 +83,8 @@
       // height: 220px;
     }
     @include desktop {
-      // width: 220px;
-      // height: 300px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
     }
   }
@@ -199,7 +196,6 @@
 
     &--imgHouse {
       margin-bottom: 10px;
-
       width: 70px;
       @include tablet {
         width: 90px;
