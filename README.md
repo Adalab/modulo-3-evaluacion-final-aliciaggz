@@ -2,7 +2,7 @@
 
 ## Evaluación final del módulo 3: React
 
-Desarrollo de pagina web con React.
+Web page with search engine and filters on Harry Potter characters.
 
 ## API Reference
 
