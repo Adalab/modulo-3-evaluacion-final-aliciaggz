@@ -23,12 +23,12 @@
   &--li {
     display: flex;
     justify-content: center;
-
-    margin: 20px;
-    width: 120px;
-    height: 260px;
+    margin: 10px;
+    width: 150px;
+    height: 245px;
     background-color: rgba(41, 41, 41, 0.856);
     @include tablet {
+      margin: 20px;
       width: 160px;
       height: 260px;
     }

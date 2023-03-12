@@ -1,8 +1,9 @@
 @import 'core/mixins';
 @import 'core/variables';
+
 .page__div2 {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -11,12 +12,10 @@
 .article {
   border: 3px rgba(69, 69, 69, 0.995) solid;
   // background-image: url('../images/texture.jpeg');
-
-  margin: 30px;
   overflow-x: visible;
   font-family: 'Harry Potter', sans-serif;
   transition: ease 0.4s;
-  margin-bottom: 100px;
+
   &:hover {
     transform: scale(0.9);
   }
@@ -35,14 +34,14 @@
 
   &__a {
     font-size: 12px;
-    font-family: 'AvaraBold';
+    font-family: $bebas;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-color: rgb(131, 1, 1);
-    color: rgb(255, 255, 255);
-    margin-bottom: 20px;
+    margin-left: 40px;
+    border: 2px solid rgb(60, 60, 60);
+    // background-color: rgb(44, 44, 44);
+    color: rgb(60, 60, 60);
     transition: ease-in 0.2s;
     @include tablet {
       width: 90px;
@@ -55,15 +54,15 @@
       font-size: 20px;
     }
     &:hover {
-      background-color: rgba(122, 0, 0, 0.753);
+      background-color: rgba(198, 198, 198, 0.753);
     }
     &--link {
-      color: white;
+      color: rgb(60, 60, 60);
     }
   }
 
   &__div {
-    height: 70%;
+    // height: 70%;
     background-image: url('../images/backcard.jpg');
     filter: grayscale(1);
     background-size: cover;

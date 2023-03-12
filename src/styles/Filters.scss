@@ -14,19 +14,30 @@
     flex-direction: column;
     font-family: $bodoni;
     background-color: rgba(45, 45, 45, 0.903);
+
     &--content {
       display: flex;
+      flex-direction: column;
+      @include tablet {
+        flex-direction: row;
+      }
     }
     &--title {
-      font-size: 90px;
+      font-size: 50px;
       font-family: $bebas;
       color: $white-primary;
+      @include tablet {
+        font-size: 90px;
+      }
     }
     &--divide {
-      margin-left: 90px;
+      margin-left: 0px;
       display: flex;
       flex-direction: column;
       justify-content: end;
+      @include tablet {
+        margin-left: 90px;
+      }
     }
     @include tablet {
     }
