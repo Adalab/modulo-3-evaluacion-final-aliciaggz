@@ -1,6 +1,5 @@
-# React Starter Kit
 
-## Evaluación final del módulo 3: React
+# Evaluación final del módulo 3: React
 
 Web page with search engine and filters on Harry Potter characters.
 
