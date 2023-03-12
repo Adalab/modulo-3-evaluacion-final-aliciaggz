@@ -1,4 +1,5 @@
 @import 'core/mixins';
+@import 'core/variables';
 .page__div2 {
   display: flex;
   flex-direction: column;
@@ -91,9 +92,10 @@
 
   &__aside {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     margin: 10px;
+    font-family: $bodoni;
     color: rgb(100, 100, 100);
 
     &--imgHeart {
@@ -102,7 +104,7 @@
         width: 30px;
       }
       @include desktop {
-        width: 50px;
+        width: 40px;
       }
     }
   }
@@ -110,19 +112,16 @@
   &__text {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    margin-top: 5px;
+    padding: 15px 5px;
 
     &--status {
       margin: 5px;
-      width: 80%;
+      // width: 80%;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      // align-items: center;
+      // justify-content: center;
       margin-bottom: 5px;
-      border-radius: 0.2em;
       background: rgba(237, 237, 237, 0.212);
       background: radial-gradient(
         circle,
@@ -140,12 +139,11 @@
     }
     &--specie {
       margin: 5px;
-      width: 80%;
+      // width: 80%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 5px;
-      border-radius: 0.2em;
       background: rgba(237, 237, 237, 0.212);
       background: radial-gradient(
         circle,
@@ -163,12 +161,12 @@
     }
     &--gender {
       margin: 5px;
-      width: 80%;
+      // width: 80%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 5px;
-      border-radius: 0.2em;
+
       background: rgba(237, 237, 237, 0.212);
       background: radial-gradient(
         circle,
@@ -187,25 +185,26 @@
   }
 
   &__container {
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow-x: visible;
 
-    padding-top: 20px;
+    overflow-x: visible;
+    background-color: $white-primary;
+    padding: 20px 0px;
 
     &--imgHouse {
-      margin-bottom: 10px;
-      width: 70px;
+      margin: 10px;
+      width: 50px;
       @include tablet {
-        width: 90px;
+        width: 60px;
       }
     }
     &--name {
       width: 80px;
       font-size: 22px;
       margin-left: 20px;
-      color: white;
+      color: rgb(40, 40, 40);
       @include tablet {
         width: 170px;
         font-size: 30px;

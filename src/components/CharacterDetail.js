@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 import '../styles/CharacterDetail.scss';
 import heartBeat from '../images/heart.png';
 import heartDead from '../images/heartdead.png';
-import gyffindorLogo from '../images/gryffindor.png';
+import gyffindorLogo from '../images/gryffindor1.png';
 import slytherinLogo from '../images/slitherin.png';
 import ravenclawLogo from '../images/ravenclaw.png';
-import hufflepuffLogo from '../images/hufflepuff.png';
+import hufflepuffLogo from '../images/hufflepuff1.png';
 
 function CharacterDetail(props) {
   const getSpecie = () => {
