@@ -10,7 +10,6 @@ First of all, we are going to make a website with the list of Harry Potter chara
 - Photo
 - Name
 - Species
-You can enter its official service page https://hp-api.onrender.com/
 
 Images
 
