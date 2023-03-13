@@ -7,9 +7,9 @@ Web page with search engine and filters on Harry Potter characters. This page is
 
 First of all, we are going to make a website with the list of Harry Potter characters. For that, we are going to use the https://hp-api.onrender.com/ service that returns information about the Harry Potter characters filtered by the house to which they belong. On each one, we are going to paint at least:
 
-Photo
-Name
-Species
+- Photo
+- Name
+- Species
 You can enter its official service page https://hp-api.onrender.com/
 
 Images
