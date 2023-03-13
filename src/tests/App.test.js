@@ -1,11 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import App from '../components/App';
 
-test('renders "Hola mundo"', () => {
-  // Arrange
+describe('Harry Potter App', () => {
+  it('should show a list of characters from the API', async () => {
+    window.fetch.mockResolvedValueOnce({ ok: true });
+  });
   render(<App />);
-  // Act
-  const divElement = screen.getByText('Hola mundo');
-  // Assert
-  expect(divElement).toBeInTheDocument();
+  expect(window.fetch).toHaveBeenCalledTimes(2);
+  expect(window.fetch).toHaveBeenCalledWith(
+    'https://hp-api.onrender.com/api/characters/house/gryffindor'
+  );
 });
