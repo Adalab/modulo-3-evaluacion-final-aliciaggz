@@ -53,9 +53,10 @@ Finally, you can make some visual improvements to the exercise. For example:
 In the detail of the character, show the house with its respective emblem and if a character is alive or dead with its respective icon.
 Use some grid system to paint the list of characters.
 That the responsive work well on small devices.
+
 8. BONUS: Shareable URL
 
-As an extra exercise, we suggest that the character detail URL be compatible, that is, if we visit that URL directly in the browser, the character detail will be seen. If we refresh the browser in the detail of a character, it should show the detail of the character again. And in the event that the user navigates to a non-existent URL such as http://localhost:3000/#/detail/12345 (the id 12345 does not exist) we must display a message of the type "The character you are looking for does not exist" .
+As an extra exercise, we suggest that the character detail URL be compatible, that is, if we visit that URL directly in the browser, the character detail will be seen. If we refresh the browser in the detail of a character, it should show the detail of the character again. And in the event that the user navigates to a non-existent URL such as http://localhost:3000/#/detail/12345 (the id 12345 does not exist) we must display a message of the type "The character you are looking for does not exist".
 
 9. BONUS: Sorting
 
