@@ -46,6 +46,7 @@ If we press enter while in the filter field, you must prevent the browser from n
 If you search for a text, for example "XXX" and there is no character that matches that text, a message of the type "There is no character that matches the word XXX" should be displayed.
 The filter should filter regardless of whether the user enters the text in upper or lower case.
 When entering a character detail and then pressing back, the text field should display the text it previously had.
+
 7. BONUS: Visual improvements
 
 Finally, you can make some visual improvements to the exercise. For example:
