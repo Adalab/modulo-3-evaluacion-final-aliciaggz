@@ -1,4 +1,4 @@
-import '../styles/FilterGender.scss';
+import '../../styles/FilterGender.scss';
 
 function FilterGender(props) {
   const handleInput = (ev) => {

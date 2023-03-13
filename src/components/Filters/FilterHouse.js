@@ -1,4 +1,4 @@
-import '../styles/FilterHouse.scss';
+import '../../styles/FilterHouse.scss';
 
 function FilterHouse(props) {
   return (

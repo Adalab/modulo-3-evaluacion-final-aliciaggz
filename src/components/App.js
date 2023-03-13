@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Route, Switch, useRouteMatch, Link } from 'react-router-dom';
 import callToApi from '../services/api';
 import CharacterList from './CharacterList';
-import Filters from './Filters';
+import Filters from './Filters/Filters';
 import CharacterDetail from './CharacterDetail';
 import Error from './Error';
 import Header from './Header';
