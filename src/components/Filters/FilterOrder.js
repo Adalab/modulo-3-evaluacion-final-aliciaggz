@@ -1,4 +1,4 @@
-import '../styles/FilterOrder.scss';
+import '../../styles/FilterOrder.scss';
 
 function FilterOrder(props) {
   const handleInput = (ev) => {

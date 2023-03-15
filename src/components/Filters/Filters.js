@@ -1,10 +1,10 @@
-import '../styles/Filters.scss';
+import '../../styles/Filters.scss';
 import FilterHouse from './FilterHouse';
 import FilterName from './FilterName';
 import FilterGender from './FilterGender';
 import FilterOrder from './FilterOrder';
 import FilterStudent from './FilterStudent';
-import ButtonReset from './ButtonReset';
+import ButtonReset from '../ButtonReset';
 
 function Filters(props) {
   const handleSubmit = (ev) => {

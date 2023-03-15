@@ -8,17 +8,24 @@ import ravenclawLogo from '../images/ravenclaw.png';
 import hufflepuffLogo from '../images/hufflepuff1.png';
 
 function CharacterDetail(props) {
-  const getSpecie = () => {
-    if (props.eachCharacter.specie === 'human') {
-      return 'Humano';
-    } else if (props.eachCharacter.specie === 'werewolf') {
-      return 'Hombre Lobo';
-    } else if (props.eachCharacter.specie === 'ghost') {
-      return 'Fantasma';
-    } else if (props.eachCharacter.specie === 'half-giant') {
-      return 'Medio Gigante';
-    }
+  const speciesTranslations = {
+    human: 'Humano',
+    werewolf: 'Hombre Lobo',
+    ghost: 'Fantasma',
+    'half-giant': 'Medio Gigante',
   };
+  const getSpecie = (characterSpecie) => speciesTranslations[characterSpecie];
+  // const getSpecie = () => {
+  //   if (props.eachCharacter.specie === 'human') {
+  //     return 'Humano';
+  //   } else if (props.eachCharacter.specie === 'werewolf') {
+  //     return 'Hombre Lobo';
+  //   } else if (props.eachCharacter.specie === 'ghost') {
+  //     return 'Fantasma';
+  //   } else if (props.eachCharacter.specie === 'half-giant') {
+  //     return 'Medio Gigante';
+  //   }
+  // };
 
   const getGender = () => {
     return props.eachCharacter.gender === 'male' ? 'Hombre' : 'Mujer';
@@ -81,7 +88,9 @@ function CharacterDetail(props) {
               />
             </p>
             <p className="article__text--specie">Especie: {getSpecie()}</p>
-            <p className="article__text--gender">Género: {getGender()}</p>
+            <p className="article__text--gender">
+              Género: {getGender(props.eachCharacter.specie)}
+            </p>
           </div>
         </div>
       </article>

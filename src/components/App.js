@@ -1,14 +1,13 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
-
-import { Route, Switch, BrowserRouter, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import callToApi from '../services/api';
 import CharacterList from './CharacterList';
-import Filters from './Filters';
+import Filters from './Filters/Filters';
 import CharacterDetail from './CharacterDetail';
 import Error from './Error';
 import Header from './Header';
-import ButtonReset from './ButtonReset';
+// import ButtonReset from './ButtonReset';
 import ErrorPage from './ErrorPage';
 
 const App = () => {
@@ -16,8 +15,8 @@ const App = () => {
   const [searchName, setSearchName] = useState('');
   const [searchHouse, setSearchHouse] = useState('gryffindor');
   const [filterGender, setFilterGender] = useState('all');
-  const [filterOrder, setfilterOrder] = useState(false);
-  const [filterStudent, setfilterStudent] = useState(false);
+  const [filterOrder, setFilterOrder] = useState(false);
+  const [filterStudent, setFilterStudent] = useState(false);
 
   useEffect(() => {
     callToApi(searchHouse).then((data) => {
@@ -31,21 +30,41 @@ const App = () => {
 
   //handler
 
-  const handleButtonReset = () => {
-    setSearchName('');
-    setSearchHouse('gryffindor');
-  };
+  // const handleButtonReset = () => {
+  //   setSearchName('');
+  //   setSearchHouse('gryffindor');
+  // };
 
-  const handleFilter = (data) => {
-    console.log('entra');
-    if (data.key === 'name') {
-      setSearchName(data.value);
-    } else if (data.key === 'gender') {
-      setFilterGender(data.value);
-    } else if (data.key === 'order') {
-      setfilterOrder(data.value);
-    } else if (data.key === 'student') {
-      setfilterStudent(data.value);
+  // const handleFilter = (data) => {
+  //   console.log('entra');
+  //   if (data.key === 'name') {
+  //     setSearchName(data.value);
+  //   } else if (data.key === 'gender') {
+  //     setFilterGender(data.value);
+  //   } else if (data.key === 'order') {
+  //     setFilterOrder(data.value);
+  //   } else if (data.key === 'student') {
+  //     setFilterStudent(data.value);
+  //   }
+  // };
+
+  const handleFilter = ({ key, value }) => {
+    switch (key) {
+      case 'name':
+        setSearchName(value);
+        break;
+      case 'gender':
+        setFilterGender(value);
+        break;
+      case 'order':
+        setFilterOrder(value);
+        break;
+      case 'student':
+        setFilterStudent(value);
+        break;
+      default:
+        console.error(`Invalid key: ${key}`);
+        break;
     }
   };
 
@@ -61,11 +80,12 @@ const App = () => {
       filterGender === 'all' ? true : eachCharacter.gender === filterGender
     )
     .filter((eachCharacter) => {
-      if (filterStudent === true) {
-        return eachCharacter.student === true;
-      } else {
-        return true;
-      }
+      return filterStudent ? eachCharacter.student : true;
+      // if (filterStudent === true) {
+      //   return eachCharacter.student === true;
+      // } else {
+      //   return true;
+      // }
     });
 
   if (filterOrder === true) {
@@ -97,31 +117,29 @@ const App = () => {
   return (
     <>
       <Header />
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            <Filters
-              handleSearchName={handleSearchName}
-              handleFilter={handleFilter}
+      <Switch>
+        <Route exact path="/">
+          <Filters
+            handleSearchName={handleSearchName}
+            handleFilter={handleFilter}
+            searchName={searchName}
+            filterGender={filterGender}
+            searchHouse={searchHouse}
+            filterOrder={filterOrder}
+            filterStudent={filterStudent}
+          />
+          {/* <ButtonReset handleButtonReset={handleButtonReset} /> */}
+          {filterCharacters.length === 0 ? (
+            <Error />
+          ) : (
+            <CharacterList
+              characters={filterCharacters}
               searchName={searchName}
-              filterGender={filterGender}
-              searchHouse={searchHouse}
-              filterOrder={filterOrder}
-              filterStudent={filterStudent}
             />
-            {/* <ButtonReset handleButtonReset={handleButtonReset} /> */}
-            {filterCharacters.length === 0 ? (
-              <Error />
-            ) : (
-              <CharacterList
-                characters={filterCharacters}
-                searchName={searchName}
-              />
-            )}
-          </Route>
-          <Route path="/character/:id" render={renderCharacterDetail} />
-        </Switch>
-      </BrowserRouter>
+          )}
+        </Route>
+        <Route path="/character/:id" render={renderCharacterDetail} />
+      </Switch>
     </>
   );
 };
