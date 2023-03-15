@@ -1,9 +1,9 @@
-export const getSpecie = (species) => {
+export const getSpecie = (specie) => {
   const speciesTranslations = {
     human: 'Humano',
     werewolf: 'Hombre Lobo',
     ghost: 'Fantasma',
     'half-giant': 'Medio Gigante',
   };
-  return speciesTranslations[species];
+  return speciesTranslations[specie];
 };
