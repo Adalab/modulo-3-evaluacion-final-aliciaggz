@@ -1,6 +1,6 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import callToApi from '../services/api';
 import CharacterList from './CharacterList';
 import Filters from './Filters/Filters';
@@ -117,29 +117,31 @@ const App = () => {
   return (
     <>
       <Header />
-      <Switch>
-        <Route exact path="/">
-          <Filters
-            handleSearchName={handleSearchName}
-            handleFilter={handleFilter}
-            searchName={searchName}
-            filterGender={filterGender}
-            searchHouse={searchHouse}
-            filterOrder={filterOrder}
-            filterStudent={filterStudent}
-          />
-          {/* <ButtonReset handleButtonReset={handleButtonReset} /> */}
-          {filterCharacters.length === 0 ? (
-            <Error />
-          ) : (
-            <CharacterList
-              characters={filterCharacters}
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Filters
+              handleSearchName={handleSearchName}
+              handleFilter={handleFilter}
               searchName={searchName}
+              filterGender={filterGender}
+              searchHouse={searchHouse}
+              filterOrder={filterOrder}
+              filterStudent={filterStudent}
             />
-          )}
-        </Route>
-        <Route path="/character/:id" render={renderCharacterDetail} />
-      </Switch>
+            {/* <ButtonReset handleButtonReset={handleButtonReset} /> */}
+            {filterCharacters.length === 0 ? (
+              <Error />
+            ) : (
+              <CharacterList
+                characters={filterCharacters}
+                searchName={searchName}
+              />
+            )}
+          </Route>
+          <Route path="/character/:id" render={renderCharacterDetail} />
+        </Switch>
+      </BrowserRouter>
     </>
   );
 };
