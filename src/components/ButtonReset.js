@@ -1,8 +1,8 @@
 import '../styles/ButtonReset.scss';
 
-function ButtonReset(props) {
+function ButtonReset({ handleButtonReset }) {
   const handleClick = () => {
-    props.handleButtonReset();
+    handleButtonReset();
   };
   return (
     <div className="page__container">
