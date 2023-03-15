@@ -7,7 +7,6 @@ import Filters from './Filters/Filters';
 import CharacterDetail from './CharacterDetail';
 import Error from './Error';
 import Header from './Header';
-// import ButtonReset from './ButtonReset';
 import ErrorPage from './ErrorPage';
 
 const App = () => {
@@ -28,25 +27,15 @@ const App = () => {
     setSearchHouse(ev.currentTarget.value);
   };
 
-  //handler
+  //handle reset
 
-  // const handleButtonReset = () => {
-  //   setSearchName('');
-  //   setSearchHouse('gryffindor');
-  // };
-
-  // const handleFilter = (data) => {
-  //   console.log('entra');
-  //   if (data.key === 'name') {
-  //     setSearchName(data.value);
-  //   } else if (data.key === 'gender') {
-  //     setFilterGender(data.value);
-  //   } else if (data.key === 'order') {
-  //     setFilterOrder(data.value);
-  //   } else if (data.key === 'student') {
-  //     setFilterStudent(data.value);
-  //   }
-  // };
+  const handleButtonReset = () => {
+    setSearchName('');
+    setSearchHouse('gryffindor');
+    setFilterGender('all');
+    setFilterOrder(false);
+    setFilterStudent(false);
+  };
 
   const handleFilter = ({ key, value }) => {
     switch (key) {
@@ -81,11 +70,6 @@ const App = () => {
     )
     .filter((eachCharacter) => {
       return filterStudent ? eachCharacter.student : true;
-      // if (filterStudent === true) {
-      //   return eachCharacter.student === true;
-      // } else {
-      //   return true;
-      // }
     });
 
   if (filterOrder === true) {
@@ -96,13 +80,10 @@ const App = () => {
     });
   }
 
-  console.log(filterOrder);
-
   //render
 
   const renderCharacterDetail = (props) => {
     const routeName = props.match.params.id;
-
     const foundCharacter = characters.find((eachCharacter) => {
       return eachCharacter.id === routeName;
     });
@@ -128,15 +109,13 @@ const App = () => {
               searchHouse={searchHouse}
               filterOrder={filterOrder}
               filterStudent={filterStudent}
+              handleButtonReset={handleButtonReset}
             />
-            {/* <ButtonReset handleButtonReset={handleButtonReset} /> */}
+
             {filterCharacters.length === 0 ? (
               <Error />
             ) : (
-              <CharacterList
-                characters={filterCharacters}
-                searchName={searchName}
-              />
+              <CharacterList characters={filterCharacters} />
             )}
           </Route>
           <Route path="/character/:id" render={renderCharacterDetail} />

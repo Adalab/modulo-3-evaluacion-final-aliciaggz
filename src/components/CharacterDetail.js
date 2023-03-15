@@ -6,39 +6,20 @@ import gyffindorLogo from '../images/gryffindor1.png';
 import slytherinLogo from '../images/slitherin.png';
 import ravenclawLogo from '../images/ravenclaw.png';
 import hufflepuffLogo from '../images/hufflepuff1.png';
-
-function CharacterDetail(props) {
-  const speciesTranslations = {
-    human: 'Humano',
-    werewolf: 'Hombre Lobo',
-    ghost: 'Fantasma',
-    'half-giant': 'Medio Gigante',
-  };
-  const getSpecie = (characterSpecie) => speciesTranslations[characterSpecie];
-  // const getSpecie = () => {
-  //   if (props.eachCharacter.specie === 'human') {
-  //     return 'Humano';
-  //   } else if (props.eachCharacter.specie === 'werewolf') {
-  //     return 'Hombre Lobo';
-  //   } else if (props.eachCharacter.specie === 'ghost') {
-  //     return 'Fantasma';
-  //   } else if (props.eachCharacter.specie === 'half-giant') {
-  //     return 'Medio Gigante';
-  //   }
-  // };
-
+import { getSpecie } from '../services/translateSpecies';
+function CharacterDetail({ eachCharacter }) {
   const getGender = () => {
-    return props.eachCharacter.gender === 'male' ? 'Hombre' : 'Mujer';
+    return eachCharacter.gender === 'male' ? 'Hombre' : 'Mujer';
   };
 
   const getHouse = () => {
-    if (props.eachCharacter.house === 'Gryffindor') {
+    if (eachCharacter.house === 'Gryffindor') {
       return `${gyffindorLogo}`;
-    } else if (props.eachCharacter.house === 'Slytherin') {
+    } else if (eachCharacter.house === 'Slytherin') {
       return `${slytherinLogo}`;
-    } else if (props.eachCharacter.house === 'Hufflepuff') {
+    } else if (eachCharacter.house === 'Hufflepuff') {
       return `${hufflepuffLogo}`;
-    } else if (props.eachCharacter.house === 'Ravenclaw') {
+    } else if (eachCharacter.house === 'Ravenclaw') {
       return `${ravenclawLogo}`;
     }
   };
@@ -53,9 +34,7 @@ function CharacterDetail(props) {
       <article className="article">
         <div className="article__div">
           <div className="article__container">
-            <p className="article__container--name">
-              {props.eachCharacter.name}
-            </p>
+            <p className="article__container--name">{eachCharacter.name}</p>
             <img
               className="article__container--imgHouse"
               src={getHouse()}
@@ -66,11 +45,11 @@ function CharacterDetail(props) {
           <img
             className="article__img"
             src={
-              props.eachCharacter.image === ''
+              eachCharacter.image === ''
                 ? 'https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter'
-                : `${props.eachCharacter.image}`
+                : `${eachCharacter.image}`
             }
-            alt={`Foto de ${props.eachCharacter.name}`}
+            alt={`Foto de ${eachCharacter.name}`}
           />
         </div>
         <div className="article__aside">
@@ -80,17 +59,17 @@ function CharacterDetail(props) {
               <img
                 className="article__aside--imgHeart"
                 src={
-                  props.eachCharacter.status === true
+                  eachCharacter.status === true
                     ? `${heartBeat}`
                     : `${heartDead}`
                 }
                 alt=""
               />
             </p>
-            <p className="article__text--specie">Especie: {getSpecie()}</p>
-            <p className="article__text--gender">
-              Género: {getGender(props.eachCharacter.specie)}
+            <p className="article__text--specie">
+              Especie: {getSpecie(eachCharacter.specie)}
             </p>
+            <p className="article__text--gender">Género: {getGender()}</p>
           </div>
         </div>
       </article>

@@ -1,41 +1,24 @@
 import { Link } from 'react-router-dom';
+import { getSpecie } from '../services/translateSpecies';
 import '../styles/CharacterCard.scss';
-function CharacterCard(props) {
-  const speciesTranslations = {
-    human: 'Humano',
-    werewolf: 'Hombre Lobo',
-    ghost: 'Fantasma',
-    'half-giant': 'Medio Gigante',
-  };
-  const getSpecie = (characterSpecie) => speciesTranslations[characterSpecie];
-  // const getSpecie = () => {
-  //   if (props.eachCharacter.specie === 'human') {
-  //     return 'Humano';
-  //   } else if (props.eachCharacter.specie === 'werewolf') {
-  //     return 'Hombre Lobo';
-  //   } else if (props.eachCharacter.specie === 'ghost') {
-  //     return 'Fantasma';
-  //   } else if (props.eachCharacter.specie === 'half-giant') {
-  //     return 'Medio Gigante';
-  //   }
-  // };
+function CharacterCard({ eachCharacter }) {
   return (
     <>
-      <Link to={`/character/${props.eachCharacter.id}`}>
+      <Link to={`/character/${eachCharacter.id}`}>
         <img
           className="card__img"
           src={
-            props.eachCharacter.image === ''
+            eachCharacter.image === ''
               ? 'https://ae01.alicdn.com/kf/HTB1KqKqNFXXXXcwaXXXq6xXFXXXe/17-7-11-4CM-Stylish-Harry-Potter-Glasses-For-Car-Stickers-Interesting-Motorcycle-Vinyl-Decals-Black.jpg'
-              : `${props.eachCharacter.image}`
+              : `${eachCharacter.image}`
           }
-          alt={`Foto de ${props.eachCharacter.name}`}
+          alt={`Foto de ${eachCharacter.name}`}
         />
 
         <div className="card__text">
-          <p className="card__text--name">{props.eachCharacter.name}</p>
+          <p className="card__text--name">{eachCharacter.name}</p>
           <p className="card__text--specie">
-            {getSpecie(props.eachCharacter.specie)}
+            {getSpecie(eachCharacter.specie)}
           </p>
         </div>
       </Link>
