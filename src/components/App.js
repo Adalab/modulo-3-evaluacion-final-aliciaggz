@@ -80,13 +80,10 @@ const App = () => {
     });
   }
 
-  console.log(filterOrder);
-
   //render
 
   const renderCharacterDetail = (props) => {
     const routeName = props.match.params.id;
-
     const foundCharacter = characters.find((eachCharacter) => {
       return eachCharacter.id === routeName;
     });
