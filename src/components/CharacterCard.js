@@ -1,17 +1,24 @@
 import { Link } from 'react-router-dom';
 import '../styles/CharacterCard.scss';
 function CharacterCard(props) {
-  const getSpecie = () => {
-    if (props.eachCharacter.specie === 'human') {
-      return 'Humano';
-    } else if (props.eachCharacter.specie === 'werewolf') {
-      return 'Hombre Lobo';
-    } else if (props.eachCharacter.specie === 'ghost') {
-      return 'Fantasma';
-    } else if (props.eachCharacter.specie === 'half-giant') {
-      return 'Medio Gigante';
-    }
+  const speciesTranslations = {
+    human: 'Humano',
+    werewolf: 'Hombre Lobo',
+    ghost: 'Fantasma',
+    'half-giant': 'Medio Gigante',
   };
+  const getSpecie = (characterSpecie) => speciesTranslations[characterSpecie];
+  // const getSpecie = () => {
+  //   if (props.eachCharacter.specie === 'human') {
+  //     return 'Humano';
+  //   } else if (props.eachCharacter.specie === 'werewolf') {
+  //     return 'Hombre Lobo';
+  //   } else if (props.eachCharacter.specie === 'ghost') {
+  //     return 'Fantasma';
+  //   } else if (props.eachCharacter.specie === 'half-giant') {
+  //     return 'Medio Gigante';
+  //   }
+  // };
   return (
     <>
       <Link to={`/character/${props.eachCharacter.id}`}>
@@ -27,7 +34,9 @@ function CharacterCard(props) {
 
         <div className="card__text">
           <p className="card__text--name">{props.eachCharacter.name}</p>
-          <p className="card__text--specie">{getSpecie()}</p>
+          <p className="card__text--specie">
+            {getSpecie(props.eachCharacter.specie)}
+          </p>
         </div>
       </Link>
     </>
