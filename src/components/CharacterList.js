@@ -1,8 +1,8 @@
 import CharacterCard from './CharacterCard';
 import '../styles/CharacterList.scss';
 
-function CharacterList(props) {
-  const charactersInfo = props.characters.map((eachCharacter, index) => {
+function CharacterList({ characters }) {
+  const charactersInfo = characters.map((eachCharacter, index) => {
     return (
       <li className="section__list--li" key={index}>
         <CharacterCard eachCharacter={eachCharacter} />
