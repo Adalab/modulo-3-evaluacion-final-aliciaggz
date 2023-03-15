@@ -81,11 +81,6 @@ const App = () => {
     )
     .filter((eachCharacter) => {
       return filterStudent ? eachCharacter.student : true;
-      // if (filterStudent === true) {
-      //   return eachCharacter.student === true;
-      // } else {
-      //   return true;
-      // }
     });
 
   if (filterOrder === true) {
