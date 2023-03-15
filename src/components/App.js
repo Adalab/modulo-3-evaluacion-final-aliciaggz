@@ -32,6 +32,9 @@ const App = () => {
   const handleButtonReset = () => {
     setSearchName('');
     setSearchHouse('gryffindor');
+    setFilterGender('all');
+    setFilterOrder(false);
+    setFilterStudent(false);
   };
 
   const handleFilter = ({ key, value }) => {
