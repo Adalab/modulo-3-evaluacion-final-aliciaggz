@@ -1,4 +1,4 @@
-# Evaluación final del módulo 3: React
+# Web page React Harry Potter Characters
 
 Web page with search engine and filters on Harry Potter characters. This page is part of a final assessment exam. Let's define the different parts of the exercise:
 
